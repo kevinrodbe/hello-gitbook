@@ -1,0 +1,7 @@
+.bookignore
+docs/README.md
+.git
+.gitignore
+package.json
+package-lock.json
+node_modules
