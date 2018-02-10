@@ -2,4 +2,4 @@
 
 Hello from docs.
 
-[One](one.md)
+* [One](one.md)
