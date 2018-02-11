@@ -5,3 +5,10 @@ install:
 script:
 - npm run docs
 - git checkout --track origin/gh-pages
+- rm -f -r docs
+- rm -f -r gitbook
+- rm index.html
+- rm search_index.json
+- cp -R _book/* .
+- git add -A
+- git commit -m "Travis CI update"
