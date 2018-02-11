@@ -4,7 +4,13 @@ install:
 - npm install
 script:
 - npm run docs
-- git checkout -b gh-pages
+- git checkout --orphan gh-pages
+- git rm -rf .
 - cp -R _book/* .
+- echo node_modules >> .gitignore
+- echo _book >> .gitignore
+- echo .gitignore >> .gitignore
 - git add -A
-- git commit -m "Travis CI update"
+- git commit -m "Travis CI: ${TRAVIS_COMMIT}"
+- git remote add origin-pages https://${GH_TOKEN}@github.com/larkintuckerllc/hello-gitbook
+- git push --force origin-pages gh-pages
