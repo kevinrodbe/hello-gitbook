@@ -1,4 +1,6 @@
 language: node_js
 node_js: lts/*
-install: true
+install:
+- npm install
+- npm run docs
 script: echo "script"
